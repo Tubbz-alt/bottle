@@ -5,9 +5,11 @@ package bottle.core.v1;
 import "bottle/fulfillment/v1/order.proto";
 import "bottle/fulfillment/v1/verification.proto";
 import "bottle/notification/order/v1/assembly_failure.proto";
+import "bottle/notification/organization/v1/password_reset.proto";
 import "bottle/notification/user/v1/created.proto";
 import "bottle/notification/user/v1/password_changed.proto";
 import "bottle/notification/user/v1/password_reset.proto";
+import "bottle/support/v1/question.proto";
 
 message Bottle {
   int64 timestamp = 1;
@@ -21,5 +23,7 @@ message Bottle {
     bottle.notification.user.v1.Created user_created = 9;
     bottle.notification.user.v1.PasswordChanged password_changed = 7;
     bottle.notification.user.v1.PasswordReset password_reset = 8;
+    bottle.notification.organization.v1.Created organization_created = 9;
+    bottle.support.v1.Question support_question = 10;
   }
 }
