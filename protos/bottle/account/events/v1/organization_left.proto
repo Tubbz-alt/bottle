@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package bottle.account.events.v1;
+
+import "bottle/account/v1/organization.proto";
+import "bottle/account/v1/user.proto";
+
+message OrganizationLeft {
+  bottle.account.v1.User user = 1;
+}

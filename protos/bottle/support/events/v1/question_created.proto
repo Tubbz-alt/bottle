@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package bottle.support.events.v1;
+
+import "bottle/support/v1/question.proto";
+
+message QuestionCreated {
+  bottle.support.v1.Question question = 1;
+}
