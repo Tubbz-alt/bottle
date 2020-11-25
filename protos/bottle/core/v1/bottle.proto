@@ -29,10 +29,9 @@ message Bottle {
     bottle.fulfillment.v1.Order order = 4;
     bottle.fulfillment.v1.Verification order_verification = 5;
     bottle.notification.order.v1.AssemblyFailure assembly_failure = 6;
-    bottle.notification.user.v1.Created user_created = 9;
     bottle.notification.user.v1.PasswordChanged password_changed = 7;
     bottle.notification.user.v1.PasswordReset password_reset = 8;
-    bottle.notification.organization.v1.Created organization_created = 9;
+    bottle.notification.user.v1.Created user_created = 9;
 
     bottle.account.events.v1.UserCreated user_created = 10;
     bottle.account.events.v1.UserPasswordChanged user_password_changed = 11;
