@@ -5,7 +5,6 @@ package bottle.core.v1;
 import "bottle/fulfillment/v1/order.proto";
 import "bottle/fulfillment/v1/verification.proto";
 import "bottle/notification/order/v1/assembly_failure.proto";
-import "bottle/notification/organization/v1/password_reset.proto";
 import "bottle/notification/user/v1/created.proto";
 import "bottle/notification/user/v1/password_changed.proto";
 import "bottle/notification/user/v1/password_reset.proto";

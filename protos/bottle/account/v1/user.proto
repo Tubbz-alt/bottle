@@ -21,5 +21,4 @@ message User {
 
   AccountType account_type = 7;
   string company_name = 8;
-  bottle.account.v1.Organization organization = 9;
 }
