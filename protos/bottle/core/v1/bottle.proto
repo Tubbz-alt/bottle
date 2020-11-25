@@ -9,7 +9,16 @@ import "bottle/notification/organization/v1/password_reset.proto";
 import "bottle/notification/user/v1/created.proto";
 import "bottle/notification/user/v1/password_changed.proto";
 import "bottle/notification/user/v1/password_reset.proto";
-import "bottle/support/v1/question.proto";
+
+
+import "bottle/account/events/v1/user_created.proto";
+import "bottle/account/events/v1/user_password_changed.proto";
+import "bottle/account/events/v1/user_reset.proto";
+import "bottle/account/events/v1/organization_created.proto";
+import "bottle/account/events/v1/organization_joined.proto";
+import "bottle/account/events/v1/organization_left.proto";
+
+import "bottle/support/events/v1/question_created.proto";
 
 message Bottle {
   int64 timestamp = 1;
@@ -24,6 +33,14 @@ message Bottle {
     bottle.notification.user.v1.PasswordChanged password_changed = 7;
     bottle.notification.user.v1.PasswordReset password_reset = 8;
     bottle.notification.organization.v1.Created organization_created = 9;
-    bottle.support.v1.Question support_question = 10;
+
+    bottle.account.events.v1.UserCreated user_created = 10;
+    bottle.account.events.v1.UserPasswordChanged user_password_changed = 11;
+    bottle.account.events.v1.UserReset user_reset = 12;
+    bottle.account.events.v1.OrganizationCreated organization_created = 13;
+    bottle.account.events.v1.OrganizationJoined organization_joined = 14;
+    bottle.account.events.v1.OrganizationLeft organization_left = 15;
+
+    bottle.support.events.v1.QuestionCreated question_created = 16;
   }
 }
