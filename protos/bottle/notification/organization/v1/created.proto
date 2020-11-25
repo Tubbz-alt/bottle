@@ -5,5 +5,5 @@ package bottle.notification.organization.v1;
 import "bottle/account/v1/organization.proto";
 
 message Created {
-  bottle.account.v1.Organizatio organization = 1;
+  bottle.account.v1.Organization organization = 1;
 }
