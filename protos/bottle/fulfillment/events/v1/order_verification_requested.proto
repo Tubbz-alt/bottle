@@ -1,10 +1,10 @@
 syntax = "proto3";
 
-package bottle.fulfillment.v1;
+package bottle.fulfillment.events.v1;
 
 import "bottle/fulfillment/v1/order.proto";
 
-message Verification {
+message OrderVerificationRequested {
   bottle.fulfillment.v1.Order order = 1;
   string code = 2;
   repeated string flag = 3;

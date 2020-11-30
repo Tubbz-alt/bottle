@@ -2,20 +2,15 @@ syntax = "proto3";
 
 package bottle.core.v1;
 
-import "bottle/fulfillment/v1/order.proto";
-import "bottle/fulfillment/v1/verification.proto";
-import "bottle/notification/order/v1/assembly_failure.proto";
-import "bottle/notification/user/v1/created.proto";
-import "bottle/notification/user/v1/password_changed.proto";
-import "bottle/notification/user/v1/password_reset.proto";
-
-
 import "bottle/account/events/v1/user_created.proto";
 import "bottle/account/events/v1/user_password_changed.proto";
 import "bottle/account/events/v1/user_reset.proto";
 import "bottle/account/events/v1/organization_created.proto";
 import "bottle/account/events/v1/organization_joined.proto";
 import "bottle/account/events/v1/organization_left.proto";
+
+import "bottle/fulfillment/events/v1/order_assembly_failed.proto";
+import "bottle/fulfillment/events/v1/order_verification_requested.proto";
 
 import "bottle/support/events/v1/question_created.proto";
 
@@ -25,20 +20,16 @@ message Bottle {
   string source = 3;
 
   oneof resource {
-    bottle.fulfillment.v1.Order order = 4;
-    bottle.fulfillment.v1.Verification order_verification = 5;
-    bottle.notification.order.v1.AssemblyFailure assembly_failure = 6;
-    bottle.notification.user.v1.PasswordChanged password_changed = 7;
-    bottle.notification.user.v1.PasswordReset password_reset = 8;
-    bottle.notification.user.v1.Created user_created = 9;
+    bottle.account.events.v1.UserCreated user_created = 4;
+    bottle.account.events.v1.UserPasswordChanged user_password_changed = 5;
+    bottle.account.events.v1.UserReset user_reset = 6;
+    bottle.account.events.v1.OrganizationCreated organization_created = 7;
+    bottle.account.events.v1.OrganizationJoined organization_joined = 8;
+    bottle.account.events.v1.OrganizationLeft organization_left = 9;
+    
+    bottle.fulfillment.events.v1.OrderAssemblyFailed order_assembly_failed = 10;
+    bottle.fulfillment.events.v1.OrderVerificationRequested order_verification_requested = 11;
 
-    bottle.account.events.v1.UserCreated user_created = 10;
-    bottle.account.events.v1.UserPasswordChanged user_password_changed = 11;
-    bottle.account.events.v1.UserReset user_reset = 12;
-    bottle.account.events.v1.OrganizationCreated organization_created = 13;
-    bottle.account.events.v1.OrganizationJoined organization_joined = 14;
-    bottle.account.events.v1.OrganizationLeft organization_left = 15;
-
-    bottle.support.events.v1.QuestionCreated question_created = 16;
+    bottle.support.events.v1.QuestionCreated question_created = 12;
   }
 }
